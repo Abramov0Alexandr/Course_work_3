@@ -20,3 +20,17 @@ def sort_data_by_time(data_dict: list) -> list:
 
     except KeyError:
         print('Ошибка прочтения даты в массиве данных')
+
+
+def date_editor(data_dict: dict) -> str:
+    source = data_dict.get('date')
+
+    if source:
+        raw_date = source[: source.find('T')]
+        pre_format_date = time.strptime(raw_date, "%Y-%m-%d")
+        formatted_date = time.strftime("%d.%m.%Y", pre_format_date)
+
+    else:
+        formatted_date = 'Ошибка прочтения даты'
+
+    return formatted_date
