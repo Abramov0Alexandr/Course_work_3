@@ -67,3 +67,21 @@ def users_account_editor(data_dict: dict) -> str:
         coded_account = 'открыт'
 
     return f"{name_card} {coded_account}"
+
+
+def beneficiary_account_editor(data_dict: dict) -> str:
+    source = data_dict.get('to')
+
+    if len(source.split(' ')) == 2:
+        name_card = source.split()[0]
+        account_number = source.split()[1]
+
+    elif len(source.split(' ')) == 3:
+        name_card = ' '.join(source.split()[0:2])
+        account_number = source.split(' ')[2]
+
+    account_number = list(account_number[-6:])
+    account_number[:2] = '**'
+    coded_account = ''.join(account_number)
+
+    return f"{name_card} {coded_account}"
