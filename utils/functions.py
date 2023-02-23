@@ -23,15 +23,10 @@ def check_data_for_empty_dict(data_list: list) -> list:
 
 
 def sort_data_by_time(data_dict: list) -> list:
-
     pre_sorted_data = data_dict
 
-    try:
-        sorted_data = sorted(pre_sorted_data, key=itemgetter('date'), reverse=True)
-        return sorted_data
-
-    except KeyError:
-        print('Ошибка прочтения даты в массиве данных')
+    sorted_data = sorted(pre_sorted_data, key=itemgetter('date'), reverse=True)
+    return sorted_data
 
 
 def date_editor(data_dict: dict) -> str:
