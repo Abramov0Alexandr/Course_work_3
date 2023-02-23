@@ -10,6 +10,18 @@ def json_reader() -> list:
     return result
 
 
+def check_data_for_empty_dict(data_list: list) -> list:
+    list_after_check = []
+
+    for i in data_list:
+        if len(i) != 0:
+            list_after_check.append(i)
+        else:
+            continue
+
+    return list_after_check
+
+
 def sort_data_by_time(data_dict: list) -> list:
 
     pre_sorted_data = data_dict
