@@ -112,7 +112,7 @@ def users_account_editor(data_dict: dict) -> str:
         name_card = 'Вклад'
         coded_account = 'открыт'
 
-    return f"{name_card} {coded_account}"
+    return f"{name_card} {coded_account.strip()}"
 
 
 def beneficiary_account_editor(data_dict: dict) -> str:
