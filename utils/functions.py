@@ -6,13 +6,13 @@ from operator import itemgetter
 BANK_TRANSACTION_DATA = 'https://api.npoint.io/84633d18dad22794d84b'
 
 
-def json_reader() -> list:
+def json_reader(url_data) -> list:
     """
     Функция для получения исходных данных
     :return: Списковый словарь
     """
 
-    response = requests.get(BANK_TRANSACTION_DATA)
+    response = requests.get(url_data)
     result = response.json()
     return result
 
