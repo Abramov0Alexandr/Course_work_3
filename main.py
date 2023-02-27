@@ -2,7 +2,7 @@ from utils import functions
 
 
 def main():
-    raw_data = functions.json_reader()
+    raw_data = functions.json_reader(functions.BANK_TRANSACTION_DATA)
     pre_sorted_data_list = functions.check_data_for_empty_dict(raw_data)
     sorted_data_list = functions.sort_data_by_time(pre_sorted_data_list)
     final_data = [i for i in sorted_data_list if i['state'] == 'EXECUTED'][: 5]
