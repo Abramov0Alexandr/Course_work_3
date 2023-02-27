@@ -3,8 +3,9 @@ import pytest
 
 
 def test_json_reader():
+    url = functions.BANK_TRANSACTION_DATA
 
-    assert functions.json_reader() != []
+    assert functions.json_reader(url)
 
 
 def test_empty_json_dict():
