@@ -23,15 +23,8 @@ def check_data_for_empty_dict(data_list: list) -> list:
     :param data_list: Списковый словарь
     :return: Сформированный списковый словарь, в котором отсутствуют пустые словари, если такие были
     """
-    list_after_check = []
 
-    for i in data_list:
-        if len(i) != 0:
-            list_after_check.append(i)
-        else:
-            continue
-
-    return list_after_check
+    return [i for i in data_list if (len(i)) != 0]
 
 
 def sort_data_by_time(data_dict: list, key='date') -> list:
@@ -42,9 +35,7 @@ def sort_data_by_time(data_dict: list, key='date') -> list:
     :return: Отсортированный словарь
     """
 
-    pre_sorted_data = data_dict
-
-    sorted_data = sorted(pre_sorted_data, key=itemgetter(key), reverse=True)
+    sorted_data = sorted(data_dict, key=itemgetter(key), reverse=True)
     return sorted_data
 
 

@@ -10,7 +10,7 @@ def main():
     for i in final_data:
 
         print(f"{functions.date_editor(i)} {i.get('description')}\n"
-              f"{functions.users_account_editor(i).strip()} -> {functions.beneficiary_account_editor(i)}\n"
+              f"{functions.users_account_editor(i)} -> {functions.beneficiary_account_editor(i)}\n"
               f"{i.get('operationAmount')['amount']} {i.get('operationAmount')['currency']['name']}\n")
 
 
